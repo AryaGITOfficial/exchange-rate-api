@@ -1,0 +1,19 @@
+{
+    "name": "arya/exchange-rate-api",
+    "description": "exchange-rate-api",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "AryaGITOfficial",
+            "email": "aryaagnel@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
