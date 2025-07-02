@@ -18,6 +18,8 @@ class ProviderFactory
             ),
             'financemagic' => new LoggingDecorator(
                 new FinanceMagicProvider()
+                // new CachingDecorator(new FinanceMagicProvider())
+
             ),
             default => throw new \InvalidArgumentException("Unknown provider: $name"),
         };

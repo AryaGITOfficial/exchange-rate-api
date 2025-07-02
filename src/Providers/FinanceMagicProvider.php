@@ -9,7 +9,7 @@ class FinanceMagicProvider implements ExchangeRateProviderInterface
 {
     public function getRate(): CurrencyRate
     {
-        // Getting value from the thirdparty API call
+        // Getting value from the FinanceMagic,com thirdparty API call
         $rate = 85.69823; // test sample value
         return new CurrencyRate($rate);
     }

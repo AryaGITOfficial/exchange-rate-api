@@ -6,7 +6,7 @@ class Logger
 {
     public static function info(string $message): void
     {
-        echo "[INFO] " . $message . PHP_EOL;
+        echo "[LOG INFO] " . $message . PHP_EOL;
     }
 }
 
