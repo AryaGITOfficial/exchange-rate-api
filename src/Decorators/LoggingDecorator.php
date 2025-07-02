@@ -17,9 +17,9 @@ class LoggingDecorator implements ExchangeRateProviderInterface
 
     public function getRate(): CurrencyRate
     {
-        Logger::info("LogInfo - From " . get_class($this->provider));
+        Logger::info("LogInfoFolder - From " . get_class($this->provider));
         $rate = $this->provider->getRate();
-        Logger::info("LogInfo - Received rate: " . $rate->getFormatted());
+        Logger::info("LogInfoFolder - Received rate: " . $rate->getFormatted());
         return $rate;
     }
 }
