@@ -1,19 +1,13 @@
-Since it should be possible to integrate more such external APIs in the future without changing core components, defined an interface ExchangeRateProviderInterface.php and each provider - MoneyNowProvider.php, FinanceMagicProvider.php- implements ExchangeRateProviderInterface.php interface. 
-Also new providers in future can be added without changing existing code, just needed to update the factory.
+Future possibility of extension: For the easy integration of future external APIs without altering existing logic, defined an interface ExchangeRateProviderInterface.php. Each provider- MoneyNowProvider.php and FinanceMagicProvider.php - implements ExchangeRateProviderInterface interface. This way, additional providers can be added by updating the factory, without changing existing implementation.
 
-Implimented Caching support for minimizing the number of thirdparty API requests.
-The CachingDecorator.php wraps the provider and caches its response statically.
-Here MoneyNowProvider is cached and FinanceMagicProvider is not cached (Just to satisfy this reference in requirement doc: - Some external services/APIs may not require caching.)
+Caching: Implemented a CachingDecorator.php that wraps any provider to cache its responses. Currently, MoneyNowProvider is cached while FinanceMagicProvider is not, to incorporate the requirement that some services may not require caching.
 
-Added logging to track which provider was used and data from where. Also the logging is reusable to any provider.
+Logging: To track which provider is used and where the data is sourced from. This logging logic is reusable across providers.
 
-Since Currency should always be in two decimal points format, the CurrencyRate.php is used. Which helps in handling the value formatting.
+Currency value Formatting: Introduced CurrencyRate.php to ensure exchange rates are formatted to two decimal places as per requirement.
 
-All files represent Single Responsibility classes in a structured way. Also logging, caching, formatting are done in reusable way.
+Each class follows the Single Responsibility Principle and is organized following a clean and standard PHP folder structure for better readability and maintainability.
+Single File Version (as in requirement doc): Since the requirement also mentions submission in a single file, I have included a version in exchange_rate_api.php.
 
-To improve readability and easy to handle followed a standard php folder structure.
-Since the requrement mentions “You may write the whole components in a single PHP file and submit.”, a single file version also added – in the exchange_rate_api.php - 
-
-To test:
-To test the structured version,run: php index.php
-if need to test the single file version - exchange_rate_api.php , run: php exchange_rate_api.php
+To test the structured version: php index.php
+To test the single file version: php exchange_rate_api.php 
